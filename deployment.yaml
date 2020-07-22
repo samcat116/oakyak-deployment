@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oakyak
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: oakyak
+  template:
+    metadata:
+      labels:
+        app: oakyak
+    spec:
+      containers:
+      - name: oakyak
+        image: samcat116/oakyak
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000

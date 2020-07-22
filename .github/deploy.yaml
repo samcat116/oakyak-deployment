@@ -1,0 +1,7 @@
+name: Deploy to Kubernetes
+on:
+  push:
+
+
+- name: Kubernetes set context
+  uses: Azure/k8s-set-context@v1
